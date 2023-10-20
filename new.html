@@ -11,7 +11,7 @@
     <div id="main">
         <div id="page">
             <nav>
-                <h3><a href="index.html">Operation Code</a></h3>
+                <h3>Opreation Code</h3>
                 <div class="but">
                     <button><a href="seller.html">Seller</a></button>
                     <button><a href="buyer.html">Buyer</a></button>
@@ -20,8 +20,8 @@
                     <div id="popup-container" class="hidden" style="display: none;">
                         <div id="popup">
                             <h2>Choose Your Role</h2>
-                            <button id="buyer-button"><a href="creat_buyer.html">Buyer</a></button>
-                            <button id="seller-button"><a href="creat_seller.html">Seller</a></button>
+                            <button id="buyer-button">Buyer</button>
+                            <button id="seller-button">Seller</button>
                             <br>
                             <button id="close-popup-button">Close</button>
                         </div>
@@ -37,26 +37,31 @@
         <div id="page3"></div>
     </div>
     <script>
-
+        
+        // Get elements
+// Get elements
 const popupContainer = document.getElementById("popup-container");
 const createAccountButton = document.getElementById("create-account-button"); // Updated ID
 const buyerButton = document.getElementById("buyer-button");
 const sellerButton = document.getElementById("seller-button");
 const closePopupButton = document.getElementById("close-popup-button");
 
-
+// Show the pop-up when the "Create Account" button in the navbar is clicked
 createAccountButton.addEventListener("click", () => {
     popupContainer.style.display = "flex";
 });
 
+// Show the buyer form when the "Buyer" button is clicked
 buyerButton.addEventListener("click", () => {
-
+    // Implement your logic to display the buyer form here
 });
 
+// Show the seller form when the "Seller" button is clicked
 sellerButton.addEventListener("click", () => {
-
+    // Implement your logic to display the seller form here
 });
 
+// Close the pop-up when the "Close" button is clicked
 closePopupButton.addEventListener("click", () => {
     popupContainer.style.display = "none";
 });

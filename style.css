@@ -1,7 +1,9 @@
 *{
     margin: 0%;
     padding: 0%;
-    box-sizing: border-box;
+    box-sizing:border-box;
+    /* overflow-x: hidden; */
+    
 
 }
 html,body{
@@ -32,6 +34,11 @@ html,body{
     color: #fff;
     background-color: rgba(0, 255, 255, 0.148);
 }
+#page>nav>h3>a{
+    color: inherit;
+    text-decoration: none;
+
+}
 #page>nav>div>button{
     padding: 7px 20px;
     border-radius: 50px;
@@ -39,9 +46,29 @@ html,body{
     margin-right: 10px;
     background-color: #fff;
 }
+#page > nav > div > button {
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#page > nav > div > button:hover {
+    transition-delay: 0.3s;
+    transform: scale(1.1);
+    background-color: rgba(0, 255, 255, 0.148);
+}
+
+/* #page>nav>div>button:hover{
+    scale: 1.15;
+    background-color: rgba(0, 255, 255, 0.148);
+
+} */
+
 #page > nav > h3 {
     margin: 0;
     color: #fff;
+}
+.but>button>a{
+    color: inherit;
+    text-decoration: none;
 }
 #page1{
     height: 100vh;
@@ -58,12 +85,85 @@ html,body{
     width: 100vw;
     background-color: red;
 }
+#popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#popup {
+    background-color: rgba(0, 255, 255, 0.148);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    
+}
+
+#popup>h2 {
+    margin-bottom: 20px;
+}
+
+#close-popup-button {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 10px;
+
+}
+#close-popup-button {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 10px;
+
+}
+#buyer-button>a,#seller-button>a{
+    color: inherit;
+    text-decoration: none;
+
+}
+
+#buyer-button,#seller-button {
+    background: #0cee108e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 10px;
+}
 
 /* seller login page */
 #sellerpage{
     height: 100vh;
     width: 100vw;
     background-color: #000;
+    
+}
+
+#sellerpage > nav > div > button {
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#sellerpage > nav > div > button:hover {
+    transition-delay: 0.3s;
+    transform: scale(1.1);
+    background-color: rgba(0, 255, 255, 0.148);
 }
 #sellerpage>nav{
     display: flex;
@@ -103,13 +203,6 @@ html,body{
     text-align: right; 
     color: white; 
 } 
-
-.right { 
-    width: 45%; 
-    color: green; 
-    height: 100vh;
-    padding-top:20vh 
-} 
 .left>img { 
     width: 100%; 
     height: 140%; 
@@ -117,22 +210,32 @@ html,body{
     margin-top: -10vh;
      
 } 
+.right { 
+    width: 45%; 
+    color: green; 
+    height: 100vh;
+    padding-top:20vh 
+} 
+
 .login-container {
     width: 350px;
     margin: 0 auto;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 20px;
-    padding-bottom: 40px;
+    padding: 20px 40px;
     background-color: #1b1a1a;
-    
     border-radius: 20px;
     box-shadow: 5px 5px 15px rgba(0, 255, 255, 0.491);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.login-container:hover {
+    transform: scale(1.05); /* Scale the container on hover */
+    box-shadow: 10px 10px 20px rgba(0, 255, 255, 0.7);
 }
 
 .login-container h2 {
     text-align: center;
-    color:rgba(0, 255, 255, 0.491);
+    color: rgba(0, 255, 255, 0.491);
+    transition: color 0.3s;
 }
 
 .login-container input[type="email"],
@@ -140,41 +243,62 @@ html,body{
     width: 100%;
     padding: 10px;
     margin: 5px 0;
-    border: 0px solid #000;
-
+    border: 0;
     border-radius: 12px;
-    background-color: rgba(0, 255, 255, 0.148);
-    margin-top:20px;
-    height:50px
+    background-color: rgba(55, 72, 72, 0.148);
+    margin-top: 20px;
+    height: 50px;
+    transition: background-color 0.3s;
 }
+
 .login-container input[type="email"]::placeholder,
 .login-container input[type="password"]::placeholder {
     color: rgba(0, 255, 255, 0.491);
 }
 
+.login-container input[type="email"]:focus,
+.login-container input[type="password"]:focus {
+    /* background-color: rgba(0, 255, 255, 0.3); */
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
 .login-container button {
     width: 47%;
     padding: 10px;
-    margin-right:10px;
+    margin-right: 10px;
     color: rgba(0, 255, 255, 0.491);
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    margin-top:20px;
-    height:50px;
+    margin-top: 20px;
+    height: 50px;
     background-color: rgba(0, 255, 255, 0.148);
-
-
+    transition: background-color 0.3s;
 }
 
 .login-container button[type="reset"] {
-    margin-right:0px;
+    margin-right: 0;
 }
+
+.login-container button:hover {
+    background-color: rgba(0, 255, 255, 0.3); /* Change background on hover */
+}
+
 /* buyer login page */
 #buyerpage{
     height: 100vh;
     width: 100vw;
     background-color: #000;
+}
+
+#buyerpage > nav > div > button {
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#buyerpage > nav > div > button:hover {
+    transition-delay: 0.3s;
+    transform: scale(1.1);
+    background-color: #f4a36164;
 }
 #buyerpage>nav{
     display: flex;
@@ -232,19 +356,22 @@ html,body{
 .buyerlogin-container {
     width: 350px;
     margin: 0 auto;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 20px;
-    padding-bottom: 40px;
+    padding: 20px 40px;
     background-color: #1b1a1a;
-    
     border-radius: 20px;
-    box-shadow: 5px 5px 15px#f4a36164;
+    box-shadow: 5px 5px 15px rgba(244, 163, 97, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.buyerlogin-container:hover {
+    transform: scale(1.05); /* Scale the container on hover */
+    box-shadow: 10px 10px 20px rgba(244, 163, 97, 0.6); /* Change box-shadow on hover */
 }
 
 .buyerlogin-container h2 {
     text-align: center;
-    color:#F4A261;
+    color: #F4A261;
+    transition: color 0.3s;
 }
 
 .buyerlogin-container input[type="email"],
@@ -252,33 +379,51 @@ html,body{
     width: 100%;
     padding: 10px;
     margin: 5px 0;
-    border: 0px solid #000;
-
+    border: 0;
     border-radius: 12px;
-    background-color: #f4a36164;
-    margin-top:20px;
-    height:50px
+    
+    background-color: rgba(55, 72, 72, 0.148);
+    margin-top: 20px;
+    height: 50px;
+    transition: background-color 0.3s;
 }
+
 .buyerlogin-container input[type="email"]::placeholder,
 .buyerlogin-container input[type="password"]::placeholder {
     color: #F4A261;
 }
 
+.buyerlogin-container input[type="email"]:focus,
+.buyerlogin-container input[type="password"]:focus {
+    border: 1px solid #f4a36164;
+    
+}
+
 .buyerlogin-container button {
     width: 47%;
     padding: 10px;
-    margin-right:10px;
+    margin-right: 10px;
     color: #F4A261;
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    margin-top:20px;
-    height:50px;
+    margin-top: 20px;
+    height: 50px;
     background-color: #f4a36164;
-
-
+    transition: background-color 0.3s;
 }
+
+.buyerlogin-container button[type="reset"] {
+    margin-right: 0;
+}
+
+.buyerlogin-container button:hover {
+    
+    border: 1px solid #f4a36164;
+}
+
 
 .buyerlogin-container button[type="reset"] {
     margin-right:0px;
 }
+
